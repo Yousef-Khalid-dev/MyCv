@@ -3,100 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>السيرة الذاتية - يوسف السباعي</title>
+  <title>يوسف خالد | مطور ومصمم</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Tajawal', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      padding: 40px 20px;
-      text-align: center;
     }
 
-    img {
-      width: 150px;
-      height: 150px;
+    body {
+      background: radial-gradient(#2c003e, #0d001a);
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+      overflow-x: hidden;
+    }
+
+    .clouds {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .cloud {
+      background: rgba(0, 0, 0, 0.4);
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #25D366;
+      position: absolute;
+      animation: moveClouds 60s linear infinite;
+    }
+
+    .cloud1 { width: 200px; height: 100px; top: 50px; left: -200px; }
+    .cloud2 { width: 300px; height: 120px; top: 150px; left: -300px; animation-delay: 20s; }
+    .cloud3 { width: 250px; height: 110px; top: 250px; left: -250px; animation-delay: 40s; }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(150vw); }
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #b300ff;
+      text-shadow: 0 0 20px #b300ff;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      border: none;
+      background: #b300ff;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 20px #b300ff;
+    }
+
+    .hero button:hover {
+      background: #a000e6;
+      box-shadow: 0 0 30px #b300ff;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about, .skills-section, .social {
+      padding: 60px 20px;
+      background-color: #1a0033;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    .about h2,
+    .skills-section h2,
+    .social h2 {
+      font-size: 2rem;
+      color: #ffccff;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 26px;
-      color: #222;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      margin: 5px 0;
-    }
-
-    .whatsapp-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background-color: #25D366;
-      color: white;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .whatsapp-button i {
-      margin-left: 8px;
-    }
-
-    .whatsapp-button:hover {
-      background-color: #1eb85d;
-    }
-
-    .skills {
-      margin-top: 30px;
+    .about p,
+    .skills-section p {
+      font-size: 1.1rem;
+      color: #ccc;
       line-height: 1.8;
     }
 
+    .skills-section p {
+      margin: 6px 0;
+    }
+
+    .acounts {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .acounts a {
+      border: 2px solid #fff;
+      border-radius: 8px;
+      padding: 10px;
+      width: 140px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .facebook { border-color: #1877f2; }
+    .facebook:hover { background: #1877f2; }
+
+    .Telegram { border-color: #0088cc; }
+    .Telegram:hover { background: #0088cc; }
+
+    .tiktok { border-color: #000; }
+    .tiktok:hover { background: #000; }
+
+    .instagram { border-color: purple; }
+    .instagram:hover { background: purple; }
+
+    .whatsapp-dini { border-color: #25D366; background-color: #eaffea; color: #222; }
+    .whatsapp-dini:hover { background-color: #25D366; color: white; }
+
+    .subscribe {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
     @media (max-width: 600px) {
-      h1 {
-        font-size: 22px;
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .hero button { font-size: 0.9rem; }
+
+      .acounts a {
+        width: 80%;
+        font-size: 17px;
       }
 
-      p {
-        font-size: 16px;
+      .about h2,
+      .skills-section h2,
+      .social h2 {
+        font-size: 1.5rem;
       }
 
-      .whatsapp-button {
-        font-size: 16px;
-        padding: 10px 18px;
+      .about p,
+      .skills-section p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- الخلفية -->
+  <div class="clouds">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+  </div>
 
-  <img src="media/Yousef.jpg" alt="صورة شخصية" />
-  <h1>يوسف السباعي السباعي</h1>
-  <p>طالب ثانوية عامة</p>
-  <p>مبرمج مبتدئ 💻</p>
-  <p>العمر: ١٧ سنة</p>
+  <!-- الصفحة الرئيسية -->
+  <section class="hero">
+    <h1>يوسف خالد</h1>
+    <p>مصمم ومطور مواقع إلكترونية</p>
+    <button onclick="scrollToAbout()">اعرف أكثر</button>
+  </section>
 
-  <div class="skills">
-    <strong>المهارات واللغات:</strong>
+  <!-- نبذة -->
+  <section class="about" id="about">
+    <h2>من هو يوسف؟</h2>
+    <p>
+      طالب ثانوية عامة ومبرمج مبتدئ، أهوى تطوير الواجهات وتصميم المواقع وتصميم البوتات للواتساب وأسعى لبناء مستقبل رقمي مميز.
+    </p>
+  </section>
+
+  <!-- المهارات -->
+  <section class="skills-section">
+    <h2>المهارات واللغات</h2>
     <p>🔸 HTML</p>
     <p>🔸 CSS (تحت التعليم)</p>
     <p>🔸 JavaScript (تحت التعليم)</p>
     <p>🔸 PHP (قريبًا)</p>
     <p>🎨 تصميم مواقع بسيطة</p>
-  </div>
+    <p>🎨تصميم بوتات للواتساب Aizen_Bot</p>
+    <p>🎂 العمر: ١٧ سنة</p>
+  </section>
 
-  <a class="whatsapp-button" href="https://wa.me/201007166173" target="_blank">
-    <i class="fab fa-whatsapp"></i> تواصل واتساب
-  </a>
+  <!-- حساباتي -->
+  <section class="social">
+    <h2>روابط حساباتي</h2>
+    <div class="acounts">
+      <a class="facebook" href="https://www.facebook.com/share/14H26egVfCj/" target="_blank">
+        <i class="fab fa-facebook"></i> فيسبوك
+      </a>
+      <a class="Telegram" href="https://t.me/YKHelhajar" target="_blank">
+        <i class="fab fa-telegram"></i> تيليجرام برمجة
+      </a>
+      <a class="tiktok" href="https://www.tiktok.com/@ysf_e1spa3y0" target="_blank">
+        <i class="fab fa-tiktok"></i> تيك توك
+      </a>
+      <a class="instagram" href="https://www.instagram.com/ysfelspa3y" target="_blank">
+        <i class="fab fa-instagram"></i> إنستغرام
+      </a>
+      <a class="whatsapp-dini" href="https://wa.me/201007166173" target="_blank">
+        <i class="fab fa-whatsapp"></i> واتساب
+      </a>
+      <a class="whatsapp-dini" href="https://whatsapp.com/channel/0029VaxwtcsI7BeIcziTRr11" target="_blank">
+        <i class="fab fa-whatsapp"></i> قناة دينية
+      </a>
+    </div>
 
+    <p class="subscribe">متنساش تصلي على النبي 🤍</p>
+    <p class="subscribe">فضلاً وليس أمراً، تابعني ❤️</p>
+  </section>
+
+  <script>
+    function scrollToAbout() {
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
+</html>
 </html>
